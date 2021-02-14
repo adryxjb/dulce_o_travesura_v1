@@ -1,15 +1,16 @@
 import { Component, OnInit } from "@angular/core";
-// import { ProductosService } from "../services/producto.service";
+import { RegistroService } from "../services/registro.service";
 
 @Component({
   selector: "registroComponent",
   templateUrl: "./registro.component.html",
-  styleUrls: ["./registro.component.css"]
-  // providers: [ProductosService]
+  styleUrls: ["./registro.component.css"],
+  providers: [RegistroService]
 })
 export class RegistroComponent implements OnInit {
   public titulo: string;
-  public nombre: string;
-  public edad: string;
-  public email: string;
+
+  constructor(private _registroService: RegistroService) {
+    this.titulo = "Registrate";
+  }
 }
